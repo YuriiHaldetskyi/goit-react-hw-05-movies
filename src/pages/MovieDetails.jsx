@@ -48,7 +48,9 @@ const MovieDetails = () => {
         </li>
       </ul>
       <hr />
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Outlet />
+      </Suspense>
     </main>
   );
 };

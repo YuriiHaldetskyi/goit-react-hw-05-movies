@@ -51,7 +51,7 @@ const Cast = () => {
             })}
           </List>
         ) : (
-          <p> Sorry, no info about cast </p>
+          <p> Sorry, no info about cast's </p>
         ))}
       {status === 'idle' && <Loader />}
       {status === 'rejected' && <p>{error}</p>}
