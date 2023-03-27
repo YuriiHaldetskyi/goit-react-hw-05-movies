@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef, Suspense } from 'react';
 import { useLocation, useParams, Link, Outlet } from 'react-router-dom';
-import Loader from 'components/Loader/Loader';
-import { getMovieDetails } from 'components/API';
-import MovieInfo from 'components/MovieInfo/MovieInfo';
+import Loader from '../components/Loader/Loader';
+import { getMovieDetails } from '../components/API';
+import MovieInfo from '../components/MovieInfo/MovieInfo';
 import { FiArrowLeft } from 'react-icons/fi';
 import { StyledLink } from './MovieDetails.styled';
 
@@ -12,7 +12,7 @@ const MovieDetails = () => {
   const [error, setError] = useState('');
 
   const location = useLocation();
-  const backLink = useRef(location.state?.from ?? '/');
+  const backLink = useRef(location.state.from ?? '/');
   const { movieId } = useParams();
 
   useEffect(() => {

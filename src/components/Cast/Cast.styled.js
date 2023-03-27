@@ -13,12 +13,13 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
+  flex-basis: calc((100% - var(--gap) * (var(--items) - 1)) / var(--items));
 
   width: 25%;
 `;
 
 export const Image = styled.img`
-  width: 400px;
+  max-width: 400px;
   margin: 2px;
   overflow: hidden;
   display: block;
