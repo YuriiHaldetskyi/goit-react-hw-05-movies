@@ -12,7 +12,7 @@ const MovieDetails = () => {
   const [error, setError] = useState('');
 
   const location = useLocation();
-  const backLink = useRef(location.state.from ?? '/');
+  const backLink = useRef(location.state?.from ?? '/');
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -36,8 +36,6 @@ const MovieDetails = () => {
       {details && <MovieInfo details={details} />}
       {status === 'idle' && <Loader />}
       {status === 'rejected' && <h2>{error}</h2>}
-
-      <hr />
       <p>Additional information</p>
       <ul>
         <li>
@@ -47,7 +45,6 @@ const MovieDetails = () => {
           <Link to="reviews">Reviews</Link>
         </li>
       </ul>
-      <hr />
       <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
