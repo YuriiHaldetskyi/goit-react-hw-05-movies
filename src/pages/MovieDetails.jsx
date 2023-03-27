@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import { useLocation, useParams, Link, Outlet } from 'react-router-dom';
 import Loader from 'components/Loader/Loader';
 import { getMovieDetails } from 'components/API';
